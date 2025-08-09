@@ -1,6 +1,7 @@
 import 'package:evently/ui/screens/add_event/add_event.dart';
 import 'package:evently/ui/screens/home/home.dart';
 import 'package:evently/ui/screens/login/login.dart';
+import 'package:evently/ui/screens/on_boarding/on_boarding.dart';
 import 'package:evently/ui/screens/register/register.dart';
 import 'package:flutter/material.dart';
 
@@ -19,5 +20,9 @@ abstract final class AppRoutes {
 
   static Route get addEvent {
     return MaterialPageRoute(builder: (_) => const AddEvent());
+  }
+
+  static Route get onBoarding {
+    return MaterialPageRoute(builder: (_) => const OnBoarding());
   }
 }

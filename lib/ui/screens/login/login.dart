@@ -37,32 +37,34 @@ class _LoginState extends State<Login> {
     l10n = AppLocalizations.of(context)!;
 
     return Scaffold(
-      body: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 16.0),
-        child: SingleChildScrollView(
-          child: Column(
-            children: [
-              const SizedBox(height: 24),
-              buildAppLogo(context),
-              const SizedBox(height: 24),
-              buildEmailTextField(),
-              const SizedBox(height: 16),
-              buildPasswordTextField(),
-              const SizedBox(height: 16),
-              buildForgetPasswordText(context),
-              const SizedBox(height: 24),
-              buildLoginButton(),
-              const SizedBox(height: 24),
-              buildSignUpText(),
-              const SizedBox(height: 24),
-              buildOrRow(),
-              const SizedBox(height: 24),
-              buildGoogleLogin(), // Custom button
-              const SizedBox(height: 24),
-              buildLanguageToggle(),
-              const SizedBox(height: 24),
-              buildThemeToggle(),
-            ],
+      body: SafeArea(
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 16.0),
+          child: SingleChildScrollView(
+            child: Column(
+              children: [
+                const SizedBox(height: 24),
+                buildAppLogo(context),
+                const SizedBox(height: 24),
+                buildEmailTextField(),
+                const SizedBox(height: 16),
+                buildPasswordTextField(),
+                const SizedBox(height: 16),
+                buildForgetPasswordText(context),
+                const SizedBox(height: 24),
+                buildLoginButton(),
+                const SizedBox(height: 24),
+                buildSignUpText(),
+                const SizedBox(height: 24),
+                buildOrRow(),
+                const SizedBox(height: 24),
+                buildGoogleLogin(),
+                const SizedBox(height: 16),
+                buildLanguageToggle(),
+                const SizedBox(height: 16),
+                buildThemeToggle(),
+              ],
+            ),
           ),
         ),
       ),
