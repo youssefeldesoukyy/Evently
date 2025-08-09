@@ -86,10 +86,9 @@ Future<void> addEventToFavorite(String eventId) async {
 // Remove an event from the user's favorite list
 Future<void> removeEventFromFavorite(String eventId) async {
   final currentUser = UserDM.currentUser;
-
   if (currentUser == null) return;
 
-  var userDoc = FirebaseFirestore.instance
+  final userDoc = FirebaseFirestore.instance
       .collection(UserDM.collectionName)
       .doc(currentUser.id);
 
@@ -98,4 +97,15 @@ Future<void> removeEventFromFavorite(String eventId) async {
   });
 
   currentUser.favoriteEvents.remove(eventId);
+}
+
+final eventsCol =
+FirebaseFirestore.instance.collection(EventDM.collectionName);
+
+Future<void> updateEventInFirestore(EventDM event) async {
+  await eventsCol.doc(event.id).update(event.toJson());
+}
+
+Future<void> deleteEventFromFirestore(String eventId) async {
+  await eventsCol.doc(eventId).delete();
 }

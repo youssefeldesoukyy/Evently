@@ -51,7 +51,7 @@ class _HomeTabState extends State<HomeTab> {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(
-            "Welcome Back ✨ $number",
+            "Welcome Back ✨",
             style: TextStyle(fontSize: 14, color: Colors.white),
           ),
           Text(
@@ -93,7 +93,7 @@ class _HomeTabState extends State<HomeTab> {
     selectedTabBg: AppColors.white,
     selectedTabTextColor: AppColors.blue,
     unselectedTabBg: AppColors.blue,
-    unselectedTabTextColor: AppColors.white,
+    unselectedTabTextColor: AppColors.white, initialCategory: null,
   );
 
   buildEventsList() => StreamBuilder(

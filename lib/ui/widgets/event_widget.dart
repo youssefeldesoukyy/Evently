@@ -4,6 +4,7 @@ import 'package:evently/model/event_dm.dart';
 import 'package:evently/model/user_dm.dart';
 import 'package:evently/ui/utils/app_assets.dart';
 import 'package:evently/ui/utils/app_colors.dart';
+import 'package:evently/ui/utils/app_routes.dart';
 import 'package:flutter/material.dart';
 
 class EventWidget extends StatefulWidget {
@@ -20,20 +21,26 @@ class _EventWidgetState extends State<EventWidget> {
   @override
   Widget build(BuildContext context) {
     CategoryDM categoryDM = CategoryDM.fromTitle(widget.eventDM.categoryId);
-    return Container(
-      margin: const EdgeInsets.all(8),
-      height: MediaQuery.of(context).size.height * 0.25,
-      decoration: BoxDecoration(
-          color: Colors.black,
-          image: DecorationImage(image: AssetImage(categoryDM.image)),
-          borderRadius: BorderRadius.circular(16)),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          buildDate(),
-          Spacer(),
-          buildTitle(),
-        ],
+    return GestureDetector(
+      onTap: () {
+        Navigator.of(context).push(
+          AppRoutes.eventDetails(widget.eventDM),
+        );
+      },
+      child: Container(
+        margin: const EdgeInsets.all(8),
+        height: MediaQuery.of(context).size.height * 0.25,
+        decoration: BoxDecoration(
+            image: DecorationImage(image: AssetImage(categoryDM.image)),
+            borderRadius: BorderRadius.circular(16)),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            buildDate(),
+            Spacer(),
+            buildTitle(),
+          ],
+        ),
       ),
     );
   }

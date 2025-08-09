@@ -70,7 +70,7 @@ class _AddEventState extends State<AddEvent> {
     selectedTabBg: AppColors.blue,
     selectedTabTextColor: AppColors.white,
     unselectedTabBg: AppColors.white,
-    unselectedTabTextColor: AppColors.blue,
+    unselectedTabTextColor: AppColors.blue, initialCategory: null,
   );
 
   buildTitleTextField() => Column(

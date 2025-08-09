@@ -8,6 +8,7 @@ class CategoryTabs extends StatefulWidget {
   final Color unselectedTabBg;
   final Color selectedTabTextColor;
   final Color unselectedTabTextColor;
+  final CategoryDM? initialCategory;
 
   const CategoryTabs(
       {super.key,
@@ -16,6 +17,7 @@ class CategoryTabs extends StatefulWidget {
         required this.selectedTabTextColor,
         required this.unselectedTabBg,
         required this.unselectedTabTextColor,
+        required this.initialCategory,
         required this.onTabSelected});
 
   @override
@@ -27,7 +29,7 @@ class _CategoryTabsState extends State<CategoryTabs> {
   @override
   void initState() {
     super.initState();
-    selectedCategory = widget.categories[0];
+    selectedCategory = widget.initialCategory ?? widget.categories[0];
   }
 
   @override
